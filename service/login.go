@@ -1,6 +1,6 @@
 package service
 
-import "lemon/repo"
+import "github.com/ardityawahyu/lemon/repo"
 
 type ILoginInterface interface{}
 

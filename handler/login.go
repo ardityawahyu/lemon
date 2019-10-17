@@ -1,15 +1,14 @@
 package handler
 
-import "net/http"
+import (
+	"net/http"
 
-func PingHandler(s service.Services) {
+	"github.com/ardityawahyu/lemon/service"
+)
+
+func Login(s service.Services) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		resp := s.PaymentMethodService.GetAllPaymentMethods()
-		s.ResponseService.SendJSONResponse(w, r, http.StatusOK, resp)
+		// TODO: call login service here
+		w.WriteHeader(http.StatusOK)
 	}
-
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-	w.Write([]byte("{\"success\": \"pong\"}"))
 }
-
